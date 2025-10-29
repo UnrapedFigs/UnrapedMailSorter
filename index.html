@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Mail:Pass Sorter @unrapedt | @unrapeddt </title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Mail:Pass Sorter @unrapedt | @unrapeddt</h1>
+      <p class="tagline">Upload a .txt — sort domains. save per-domain in email:pass format.</p>
+    </header>
+
+    <section class="uploader card">
+      <div id="drop" class="dropzone">
+        <input id="fileInput" type="file" accept=".txt,text/plain" />
+        <div class="drop-inner">
+          <div class="drop-text">Drop .txt here or click to choose</div>
+          <div id="fileInfo" class="muted small">No file chosen</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="uploadBtn" class="primary">Upload & Analyze</button>
+        <button id="clearBtn" class="secondary">Clear</button>
+        <div id="status" class="status muted">Ready</div>
+        <div id="zipProgress" class="muted small" style="display:none;">Preparing ZIP…</div>
+      </div>
+    </section>
+
+    <section id="results" class="card hidden futuristic">
+      <div class="results-top">
+        <div id="summary" class="summary">—</div>
+        <div class="actions">
+          <button id="selectAll">Select all</button>
+          <button id="deselectAll" class="secondary">Deselect</button>
+          <button id="exportZip" class="primary">Export Selected → ZIP</button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table id="table">
+          <thead>
+            <tr><th></th><th>Rank</th><th>Domain</th><th>Emails Found</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="muted small">
+      DONT TRY TO SKID THIS PLEASE </footer>
+  </main>
+
+  <!-- JSZip library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <!-- App JS -->
+  <script src="./app.js"></script>
+</body>
+</html>
+<footer class="footer">
+  <a href="https://t.me/unrapedt" target="_blank" class="telegram-link">
+    <img src="telegram-logo.png" alt="Telegram" class="telegram-icon" />
+    @unrapedt
+  </a>
+  <span class="copyright">© 2025 @unrapeddt</span>
+</footer>
+

@@ -1,0 +1,121 @@
+:root{
+  --bg:#030417;
+  --panel:#07102a;
+  --accent:#7c5cff;
+  --accent2:#00e0ff;
+  --muted:#86a0c0;
+  --glass: rgba(255,255,255,0.03);
+  --glass-2: rgba(255,255,255,0.02);
+  --neon: 0 8px 30px rgba(124,92,255,0.18);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:
+ radial-gradient(1200px 600px at 10% 10%, rgba(0,224,255,0.06), transparent 8%),
+ linear-gradient(180deg,#001020 0%, #030417 100%); color:#dfeaf6; font-family:Inter,ui-sans-serif,system-ui, -apple-system, "Segoe UI", Roboto;}
+.container{max-width:1080px;margin:28px auto;padding:20px}
+.header h1{margin:0;font-size:30px;letter-spacing:0.6px}
+.tagline{margin:6px 0 18px 0;color:var(--muted)}
+.card{background:linear-gradient(180deg,var(--glass),var(--glass-2));border-radius:14px;padding:16px;margin-bottom:18px;box-shadow:var(--neon)}
+.uploader{display:flex;flex-direction:column;gap:12px}
+.dropzone{position:relative;border-radius:12px;padding:26px;border:1px dashed rgba(255,255,255,0.04);cursor:pointer;transition:transform .15s, box-shadow .15s;display:flex;align-items:center;justify-content:center}
+.dropzone:hover{transform:translateY(-4px)}
+.drop-inner{display:flex;flex-direction:column;align-items:center;gap:6px}
+.dropzone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer}
+.icon{color:var(--accent2);filter:drop-shadow(0 6px 14px rgba(0,224,255,0.06))}
+.drop-text{font-weight:600}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.controls{display:flex;align-items:center;gap:12px;margin-top:6px}
+button{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+.primary{background:linear-gradient(90deg,var(--accent),#5763ff);color:white;box-shadow:0 6px 20px rgba(88,99,255,0.16)}
+.secondary{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+.status{margin-left:auto}
+.table-wrap{margin-top:12px;max-height:420px;overflow:auto;border-radius:8px;border:1px solid rgba(255,255,255,0.02)}
+table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{padding:12px 14px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.02)}
+thead th{position:sticky;top:0;background:linear-gradient(180deg, rgba(11,18,32,0.6), rgba(11,18,32,0.3));backdrop-filter: blur(6px)}
+.results-top{display:flex;align-items:center;justify-content:space-between}
+.actions{display:flex;gap:8px}
+.hidden{display:none}
+.futuristic tbody tr:hover{background:linear-gradient(90deg, rgba(124,92,255,0.06), rgba(0,224,255,0.02))}
+input[type=checkbox]{width:18px;height:18px;border-radius:4px}
+@media (max-width:720px){
+  .controls{flex-direction:column;align-items:flex-start}
+  .actions{flex-wrap:wrap}
+  #siteFooter { position: fixed; left: 16px; /* distance from left edge / bottom: 12px; / distance from bottom edge / margin: 0; z-index: 1000; / stays above other content */ background: transparent; pointer-events: auto; }
+}
+.footer{
+  margin-top:24px;
+  text-align:center;
+  font-size:14px;
+  color:var(--muted);
+  position: relative;
+}
+
+.telegram-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  color:var(--accent2);
+  text-decoration:none;
+  font-weight:600;
+  transition: 0.3s;
+  position: relative;
+}
+
+.telegram-link:hover{
+  color:#00fff3;
+  text-shadow: 0 0 8px #00fff3, 0 0 12px #00e0ff, 0 0 20px #7c5cff;
+}
+
+.telegram-icon{
+  width:20px;
+  height:20px;
+  filter: drop-shadow(0 2px 8px rgba(0,255,255,0.5));
+  animation: neonPulse 2s infinite alternate;
+}
+
+@keyframes neonPulse{
+  0%{ filter: drop-shadow(0 2px 4px rgba(0,255,255,0.3)) drop-shadow(0 0 8px rgba(124,92,255,0.2)); }
+  50%{ filter: drop-shadow(0 4px 12px rgba(0,255,255,0.6)) drop-shadow(0 0 18px rgba(124,92,255,0.4)); }
+  100%{ filter: drop-shadow(0 2px 6px rgba(0,255,255,0.5)) drop-shadow(0 0 12px rgba(124,92,255,0.3)); }
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(0,0,0,0.3);
+  color: #0ff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 15px rgba(0,255,255,0.4);
+}
+
+.footer .telegram-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #0ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer .telegram-link:hover {
+  text-shadow: 0 0 8px #0ff;
+}
+
+.footer .telegram-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.footer .copyright {
+  margin-left: 16px;
+  font-weight: normal;
+  opacity: 0.8;
+}
